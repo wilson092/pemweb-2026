@@ -3,8 +3,12 @@
 namespace Database\Seeders;
 
 use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Ortu;
+use App\Models\Schedule;
+use App\Models\Subject;
+use App\Models\Student;
 
 class DatabaseSeeder extends Seeder
 {
@@ -17,6 +21,11 @@ class DatabaseSeeder extends Seeder
             RoleSeeder::class,
             UserSeeder::class,
             StudentSeeder::class,
+            OrtuSeeder::class,
+            ScheduleSeeder::class,
+            SubjectSeeder::class
+            
         ]);
     }
 }
+    

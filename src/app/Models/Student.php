@@ -7,4 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Student extends Model
 {
     //
+    protected $guarded = ['id'];
+
+    public function ortu()
+    {
+        return $this->belongsTo(Ortu::class);
+    }
 }

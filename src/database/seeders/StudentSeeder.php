@@ -16,7 +16,9 @@ class StudentSeeder extends Seeder
         //
        Student::firstOrCreate([
             'name' => 'John Doe',
-            'email' => 'John.doe@example.com'
+            'email' => 'John.doe@example.com',
+            'phone' => '0987654321',
+            'ortu_id' => 1,
         ]);
     }
 }
