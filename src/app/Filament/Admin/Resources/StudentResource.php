@@ -16,8 +16,11 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 class StudentResource extends Resource
 {
     protected static ?string $model = Student::class;
-
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationGroup = 'Data Management';
+    protected static ?int $navigationSort = 1;
+    protected static ?string $label = 'Student';
+    protected static ?string $pluralLabel = 'Students';
 
     public static function form(Form $form): Form
     {
@@ -35,8 +38,13 @@ class StudentResource extends Resource
                     ->maxLength(255)
                     ->default(null),
                 Forms\Components\TextInput::make('ortu_id')
+                    ->label('Ortu')
+                    ->relationship('ortu', 'name')
+                    ->searchable()
+                    ->preload()
                     ->required()
-                    ->numeric(),
+                    ->numeric()
+                    ->default(null),
             ]);
     }
 
@@ -50,8 +58,9 @@ class StudentResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('phone')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('ortu_id')
-                    ->numeric()
+                Tables\Columns\TextColumn::make('ortu.name')
+                    ->label('Ortu')
+                    ->searchable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()

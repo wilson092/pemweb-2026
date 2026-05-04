@@ -19,7 +19,7 @@ class ScheduleResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
     protected static ?string $navigationGroup = 'Data Management';
-    protected static ?int $navigationSort = -3;
+    protected static ?int $navigationSort = 3;
     protected static ?string $label = 'Jadwal Kuliah';
     protected static ?string $pluralLabel = 'Jadwal Kuliah';
 

@@ -18,6 +18,10 @@ class OrtuResource extends Resource
     protected static ?string $model = Ortu::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationGroup = 'Data Management';
+    protected static ?int $navigationSort = 2;
+    protected static ?string $label = 'Ortu';
+    protected static ?string $pluralLabel = 'Ortus';
 
     public static function form(Form $form): Form
     {
